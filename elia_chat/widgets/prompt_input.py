@@ -20,7 +20,8 @@ class PromptInput(TextArea):
         pass
 
     BINDINGS = [
-        Binding("ctrl+j,alt+enter", "submit_prompt", "Send message", key_display="^j")
+        Binding("ctrl+j", "newline", "Insert newline", priority=True, key_display="^j"),
+        Binding("enter,alt+enter", "submit_prompt", "Send message", priority=True, key_display="⏎"),
     ]
 
     def __init__(
@@ -51,7 +52,7 @@ class PromptInput(TextArea):
         text_area = event.text_area
         if text_area.text.strip() != "":
             self.submit_ready = True
-            text_area.border_subtitle = "[[white]^j[/]] Send message"
+            text_area.border_subtitle = "[[white]⏎[/]] Send message"
         else:
             self.submit_ready = False
             text_area.border_subtitle = None
@@ -71,3 +72,6 @@ class PromptInput(TextArea):
             self.post_message(message)
         else:
             self.notify("Cannot send empty message!")
+
+    def action_newline(self) -> None:
+        self.insert("\n")

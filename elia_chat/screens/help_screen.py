@@ -81,7 +81,7 @@ The shortcuts below work when the _prompt editor_ is focused.
 The prompt editor is the box where you type your message.
 It's present on both the home screen and the chat page.
 
-- `ctrl+j`: Submit the prompt
+- `enter`: Submit the prompt
 - `alt+enter`: Submit the prompt (only works in some terminals)
 - `up`: Move the cursor up
 - `down`: Move the cursor down
