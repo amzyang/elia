@@ -34,7 +34,7 @@ ChatList {
 
     BINDINGS = [
         Binding(
-            "ctrl+j", "send_message", "Send message", priority=True, key_display="^j"
+            "enter", "send_message", "Send message", key_display="⏎"
         ),
         Binding("o,ctrl+o", "options", "Options", key_display="^o"),
     ]
