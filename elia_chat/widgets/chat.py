@@ -161,13 +161,10 @@ class Chat(Widget):
 
         import litellm
         from litellm import ModelResponse, acompletion
-        from litellm.utils import trim_messages
 
         raw_messages = [message.message for message in self.chat_data.messages]
 
-        messages: list[ChatCompletionUserMessageParam] = trim_messages(
-            raw_messages, model.name
-        )  # type: ignore
+        messages: list[ChatCompletionUserMessageParam] = raw_messages
 
         litellm.organization = model.organization
         try:
